@@ -83,6 +83,11 @@ def populate_repos():
             "name": "app-account",
             "type": "Application",
             "dependabot": False
+        },
+        {
+            "name": "app-galaxy-map",
+            "type": "Application",
+            "dependabot": True
         }
     ]
 
@@ -121,7 +126,8 @@ def scorecard(repo):
 
 def pipelines(repo):
     return "| <a href='https://github.com/outoforbitdev/" + repo["name"] + "/actions/workflows/test.yml'><img alt='Test states' src='https://img.shields.io/github/actions/workflow/status/outoforbitdev/" + repo["name"] + "/test.yml?label=Test'></a>" \
-    + "<br><a href='https://github.com/outoforbitdev/" + repo["name"] + "/actions/workflows/release.yml'><img alt='Release states' src='https://img.shields.io/github/actions/workflow/status/outoforbitdev/" + repo["name"] + "/release.yml?label=Release'></a>"
+    + "<br><a href='https://github.com/outoforbitdev/" + repo["name"] + "/actions/workflows/release.yml'><img alt='Release states' src='https://img.shields.io/github/actions/workflow/status/outoforbitdev/" + repo["name"] + "/release.yml?label=Release'></a>" \
+    + "<br><a href='https://github.com/outoforbitdev/" + repo["name"] + "/actions/workflows/release.yml'><img alt='Release states' src='https://img.shields.io/github/actions/workflow/status/outoforbitdev/" + repo["name"] + "/scorecard.yml?label=Scorecard'></a>"
 
 def issues(repo):
     return "| <a href='https://github.com/outoforbitdev/" + repo["name"] + "/issues'><img alt='Open issues' src='https://img.shields.io/github/issues/outoforbitdev/" + repo["name"] + "?logo=github&label=Issues'></a> " \
